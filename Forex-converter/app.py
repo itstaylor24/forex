@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash 
 import requests
 app = Flask(__name__)
+
 
 @app.route('/')
 def show_form():
@@ -25,11 +26,11 @@ def submit_form():
     #  raise KeyError(" 'to' currency not in database")
     elif Amount is not isinstance(Amount, (float,int)):
       flash("must enter a proper numerical amount")
-      raise ValueError("must enter a proper numerical amount")
+     
 
     else: 
      Result = url.json()['result']
-    roundedResult = round(Result,2)
+     roundedResult = round(Result,2)
     return render_template('currency_form.html', currency_from=currencyFrom, currency_to=currencyTo, amount=Amount, conversion_result=roundedResult)
     
  
