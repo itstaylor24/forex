@@ -21,12 +21,13 @@
       Amount:<input type="text" name="amount" placeholder="Enter amount" />
       <button type="submit">Convert!</button>
     </form>
+    {% if conversion_result %}
     <p>
       {{amount}} {{currency_from}} to {{currency_to}} is {{conversion_result}}
       {{currency_to}}
     </p>
     {% for msg in get_flashed_messages()%}
     <p>{{msg}}</p>
-    {%endfor%}
+    {%endfor%} {% endif %}
   </body>
 </html>
