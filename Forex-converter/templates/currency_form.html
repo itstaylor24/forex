@@ -26,8 +26,8 @@
       {{amount}} {{currency_from}} to {{currency_to}} is {{conversion_result}}
       {{currency_to}}
     </p>
-    {% for msg in get_flashed_messages()%}
+    {% endif %} {% for msg in get_flashed_messages()%}
     <p>{{msg}}</p>
-    {%endfor%} {% endif %}
+    {%endfor%}
   </body>
 </html>
